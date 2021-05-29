@@ -1,5 +1,5 @@
 # Code Encyclopedia
-Data Structures, Algorithms & more.
+Data Structures, Algorithms & more. </br>
 Will expand this over time.
 
 ## Table of Contents
