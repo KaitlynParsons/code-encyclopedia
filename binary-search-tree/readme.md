@@ -9,14 +9,14 @@ A Binary Search Tree is a node-based binary tree data structure which has the fo
 
 ### Operations
 - Search
-  - find
-  - findMin
-  - findMax
+  - [find](./main.ts#L45)
+  - [findMin](./main.ts#L119)
+  - [findMax](./main.ts#L134)
 - Insertion
-  - insert
+  - [insert](./main.ts#L13)
 - Deletion
-  - remove
+  - [remove](./main.ts#L72)
 - Traversal
-  - inOrder
-  - preOrder
-  - postOrder
+  - [inOrder](./main.ts#L148)
+  - [preOrder](./main.ts#L160)
+  - [postOrder](.main.ts#L172)
