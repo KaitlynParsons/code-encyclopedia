@@ -37,5 +37,5 @@ Files can be run from within the directories with(requires node & typescript): <
 <details>
 <summary>Data Structures & Algorithms</summary>
 
-- [Binary Tree](./binary-tree/main.ts)
+- [Binary Search Tree](./binary-search-tree/readme.md)
 </details>
