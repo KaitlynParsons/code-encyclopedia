@@ -14,7 +14,7 @@ Files can be run from within the directories with(requires node & typescript): <
   - Prototype
   - Singleton
 - Structural Patterns
-  - Adapter
+  - [Adapter](./adapter/readme.md)
   - Bridge
   - Composite
   - Decorator
