@@ -10,7 +10,7 @@ Files can be run from within the directories with(requires node & typescript): <
 - Creational Patterns
   - Abstract Factory
   - Builder
-  - Factory Method
+  - [Factory Method](./factory-method/readme.md)
   - Prototype
   - Singleton
 - Structural Patterns
