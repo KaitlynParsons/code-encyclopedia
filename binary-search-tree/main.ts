@@ -10,7 +10,7 @@ interface TreeNode {
  * @param value value to insert
  * @returns TreeNode
  */
-export const insert = (root: TreeNode, value: number): TreeNode => {
+const insert = (root: TreeNode, value: number): TreeNode => {
   // Undefined guard
   if (root === undefined) return undefined;
 
@@ -42,7 +42,7 @@ export const insert = (root: TreeNode, value: number): TreeNode => {
  * @param value value to find
  * @returns TreeNode
  */
-export const find = (root: TreeNode, value: number): TreeNode => {
+const find = (root: TreeNode, value: number): TreeNode => {
   // Undefined guard
   if (!root) return undefined;
 
@@ -69,7 +69,7 @@ export const find = (root: TreeNode, value: number): TreeNode => {
  * @param value the value to remove
  * @returns TreeNode
  */
-export const remove = (root: TreeNode, value: number): TreeNode => {
+const remove = (root: TreeNode, value: number): TreeNode => {
   // Undefined guard
   if (!root) return undefined;
   // If value is less than root value,
@@ -116,7 +116,7 @@ export const remove = (root: TreeNode, value: number): TreeNode => {
  * @param node
  * @returns
  */
-export const findMin = (node: TreeNode): TreeNode => {
+const findMin = (node: TreeNode): TreeNode => {
   // If left of a node is undefined then it must be minimum node
   if (node.left === undefined) {
     return node;
@@ -131,7 +131,7 @@ export const findMin = (node: TreeNode): TreeNode => {
  * @param node
  * @returns
  */
-export const findMax = (node: TreeNode): TreeNode => {
+const findMax = (node: TreeNode): TreeNode => {
   // If right of a node is undefined then it must be maximum node
   if (node.right === undefined) {
     return node;
@@ -145,7 +145,7 @@ export const findMax = (node: TreeNode): TreeNode => {
  * Performs in order traversal of a tree
  * @param node node to traverse
  */
-export const inOrder = (node: TreeNode): void => {
+const inOrder = (node: TreeNode): void => {
     if (node !== undefined) {
         inOrder(node.left);
         console.log(node.value);
@@ -157,7 +157,7 @@ export const inOrder = (node: TreeNode): void => {
  * Performs pre order traversal of a tree
  * @param node node to traverse
  */
-export const preOrder = (node: TreeNode): void => {
+const preOrder = (node: TreeNode): void => {
     if (node !== undefined) {
         console.log(node.value);
         preOrder(node.left);
@@ -169,7 +169,7 @@ export const preOrder = (node: TreeNode): void => {
  * Performs post order traversal of a tree
  * @param node 
  */
-export const postOrder = (node: TreeNode): void => {
+const postOrder = (node: TreeNode): void => {
     if (node !== undefined) {
         postOrder(node.left);
         postOrder(node.right);
@@ -209,11 +209,11 @@ foundNode = findMax(root);
 console.log(`Max Node Found: ${JSON.stringify(foundNode, null, 2)}`);
 
 // Test traversals
-console.log('-------');
+console.log('IN ORDER');
 inOrder(root);
-console.log('-------');
+console.log('PRE ORDER');
 preOrder(root);
-console.log('-------');
+console.log('POST ORDER');
 postOrder(root);
 console.log('-------');
 

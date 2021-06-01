@@ -64,7 +64,7 @@ class ConcreteProduct2 implements Product {
  * As long as client works with creator via base interface, you can pass it any creator's subclass.
  * @param creator 
  */
-export const clientCode = (creator: Creator): void => {
+const clientCode = (creator: Creator): void => {
     console.log('Client: I\'m not aware of the creator\'s class, but it still works.');
     console.log(creator.someOperation());
 }

@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,8 +13,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
-exports.clientCode = void 0;
 /**
  * Creator class declares the factory method that issupposed to return an object of a Product class.
  * The Creator's subclasses usually provide the implementation of this method.
@@ -90,11 +87,10 @@ var clientCode = function (creator) {
     console.log('Client: I\'m not aware of the creator\'s class, but it still works.');
     console.log(creator.someOperation());
 };
-exports.clientCode = clientCode;
 // The Application picks a creator's type depending on the configuration or environment.
 console.log('App: Launched with the ConcreteCreator1.');
-exports.clientCode(new ConcreteCreator1());
+clientCode(new ConcreteCreator1());
 console.log('');
 console.log('App: Launched with the ConcreteCreator2.');
-exports.clientCode(new ConcreteCreator2());
+clientCode(new ConcreteCreator2());
 console.log('');

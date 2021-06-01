@@ -1,6 +1,3 @@
-"use strict";
-exports.__esModule = true;
-exports.postOrder = exports.preOrder = exports.inOrder = exports.findMax = exports.findMin = exports.remove = exports.find = exports.insert = void 0;
 /**
  * Inserts a new value to the Binary Tree
  * @param root the root node to insert to
@@ -18,7 +15,7 @@ var insert = function (root, value) {
         }
         else {
             // Recur until right most undefined node is found
-            exports.insert(root.right, value);
+            insert(root.right, value);
         }
     }
     // If value is less than root value, then insert left
@@ -28,12 +25,11 @@ var insert = function (root, value) {
         }
         else {
             // Recur until left most undefined node is found
-            exports.insert(root.left, value);
+            insert(root.left, value);
         }
     }
     return root;
 };
-exports.insert = insert;
 /**
  * Finds a value in the Binary Tree
  * @param root the root node
@@ -63,7 +59,6 @@ var find = function (root, value) {
     // Return node
     return root;
 };
-exports.find = find;
 /**
  * Removes a value from the Binary Tree
  * @param root the root node
@@ -77,13 +72,13 @@ var remove = function (root, value) {
     // If value is less than root value,
     // then recur left utill value is found and return root
     else if (value < root.value) {
-        root.left = exports.remove(root.left, value);
+        root.left = remove(root.left, value);
         return root;
     }
     // If value is greater than root value,
     // then recur right utill value is found and return root
     else if (value > root.value) {
-        root.right = exports.remove(root.right, value);
+        root.right = remove(root.right, value);
         return root;
     }
     // Otherwise remove this node
@@ -104,13 +99,12 @@ var remove = function (root, value) {
             return root;
         }
         // Remove node with two children
-        var minNode = exports.findMin(root.right);
+        var minNode = findMin(root.right);
         root.value = minNode.value;
-        root.right = exports.remove(root.right, minNode.value);
+        root.right = remove(root.right, minNode.value);
         return root;
     }
 };
-exports.remove = remove;
 /**
  * Finds the minimum node in tree searching starts from given node
  * @param node
@@ -123,10 +117,9 @@ var findMin = function (node) {
     }
     else {
         // Recur until minimum is found
-        return exports.findMin(node.left);
+        return findMin(node.left);
     }
 };
-exports.findMin = findMin;
 /**
  * Finds the maximum node in tree searching starts from given node
  * @param node
@@ -139,22 +132,20 @@ var findMax = function (node) {
     }
     else {
         // Recur until maximum is found
-        return exports.findMax(node.right);
+        return findMax(node.right);
     }
 };
-exports.findMax = findMax;
 /**
  * Performs in order traversal of a tree
  * @param node node to traverse
  */
 var inOrder = function (node) {
     if (node !== undefined) {
-        exports.inOrder(node.left);
+        inOrder(node.left);
         console.log(node.value);
-        exports.inOrder(node.right);
+        inOrder(node.right);
     }
 };
-exports.inOrder = inOrder;
 /**
  * Performs pre order traversal of a tree
  * @param node node to traverse
@@ -162,56 +153,54 @@ exports.inOrder = inOrder;
 var preOrder = function (node) {
     if (node !== undefined) {
         console.log(node.value);
-        exports.preOrder(node.left);
-        exports.preOrder(node.right);
+        preOrder(node.left);
+        preOrder(node.right);
     }
 };
-exports.preOrder = preOrder;
 /**
  * Performs post order traversal of a tree
  * @param node
  */
 var postOrder = function (node) {
     if (node !== undefined) {
-        exports.postOrder(node.left);
-        exports.postOrder(node.right);
+        postOrder(node.left);
+        postOrder(node.right);
         console.log(node.value);
     }
 };
-exports.postOrder = postOrder;
 /**
  * TESTS
  */
 var root = { value: 8 };
 // Test insert
-exports.insert(root, 5);
-exports.insert(root, 10);
-exports.insert(root, 3);
-exports.insert(root, 25);
-exports.insert(root, 13);
+insert(root, 5);
+insert(root, 10);
+insert(root, 3);
+insert(root, 25);
+insert(root, 13);
 console.log(JSON.stringify(root, null, 2));
 var foundNode = undefined;
 // Test Find
-foundNode = exports.find(undefined, 25);
+foundNode = find(undefined, 25);
 console.log("Node Found: " + JSON.stringify(foundNode, null, 2));
-foundNode = exports.find(root, 2);
+foundNode = find(root, 2);
 console.log("Node Found: " + JSON.stringify(foundNode, null, 2));
-foundNode = exports.find(root, 25);
+foundNode = find(root, 25);
 console.log("Node Found: " + JSON.stringify(foundNode, null, 2));
 // Test findMin
-foundNode = exports.findMin(root);
+foundNode = findMin(root);
 console.log("Min Node Found: " + JSON.stringify(foundNode, null, 2));
 // Test findMax
-foundNode = exports.findMax(root);
+foundNode = findMax(root);
 console.log("Max Node Found: " + JSON.stringify(foundNode, null, 2));
 // Test traversals
-console.log('-------');
-exports.inOrder(root);
-console.log('-------');
-exports.preOrder(root);
-console.log('-------');
-exports.postOrder(root);
+console.log('IN ORDER');
+inOrder(root);
+console.log('PRE ORDER');
+preOrder(root);
+console.log('POST ORDER');
+postOrder(root);
 console.log('-------');
 // Test remove
-exports.remove(root, 10);
+remove(root, 10);
 console.log(JSON.stringify(root, null, 2));
