@@ -11,6 +11,7 @@ const memoize = (func: Function): Function => {
   // Cache of results
   const cacheResults: cached = {};
   return (...args: unknown[]): unknown => {
+    // JSON key to save the results cache
     const argsKey = JSON.stringify(args);
     // Execute `func` only if there is no cached value of squared()
     if (!cacheResults[argsKey]) {
@@ -34,6 +35,9 @@ const squared = memoize((num: number): number => {
   return result;
 });
 
+/**
+ * TESTS
+ */
 console.time("First call");
 console.log(squared(9467));
 console.timeEnd("First call");
